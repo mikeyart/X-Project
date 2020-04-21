@@ -6,3 +6,21 @@ D:\Mihai\FAF\Teza de licenta\Frontend\Model_1546\obj\Debug\Model_1546.csproj.Res
 D:\Mihai\FAF\Teza de licenta\Frontend\Model_1546\obj\Debug\Model_1546.csproj.CoreCompileInputs.cache
 D:\Mihai\FAF\Teza de licenta\Frontend\Model_1546\obj\Debug\Model_1546.exe
 D:\Mihai\FAF\Teza de licenta\Frontend\Model_1546\obj\Debug\Model_1546.pdb
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Model_1546.exe.config
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Model_1546.exe
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Model_1546.pdb
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\obj\Debug\Model_1546.csprojAssemblyReference.cache
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\obj\Debug\Model_1546.csproj.ResolveComReference.cache
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\obj\Debug\Model_1546.csproj.CoreCompileInputs.cache
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\obj\Debug\Model_1546.exe
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\obj\Debug\Model_1546.pdb
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.Common.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.License.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.Pdf.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.XLS.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Microsoft.mshtml.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.Common.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.License.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.Pdf.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.XLS.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\obj\Debug\Model_1546.csproj.CopyComplete

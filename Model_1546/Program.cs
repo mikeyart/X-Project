@@ -10,7 +10,7 @@ namespace Model_1546
     {
         static void Main(string[] args)
         {
-
+            Interpolation.getExcelFile();
         }
     }
 }
