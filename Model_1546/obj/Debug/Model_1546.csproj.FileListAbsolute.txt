@@ -24,3 +24,32 @@ D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.License.xml
 D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.Pdf.xml
 D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.XLS.xml
 D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\obj\Debug\Model_1546.csproj.CopyComplete
+D:\XProject\Model_1546\bin\Debug\Model_1546.exe.config
+D:\XProject\Model_1546\bin\Debug\Model_1546.exe
+D:\XProject\Model_1546\bin\Debug\Model_1546.pdb
+D:\XProject\Model_1546\obj\Debug\Model_1546.csprojAssemblyReference.cache
+D:\XProject\Model_1546\obj\Debug\Model_1546.csproj.ResolveComReference.cache
+D:\XProject\Model_1546\obj\Debug\Model_1546.csproj.CoreCompileInputs.cache
+D:\XProject\Model_1546\obj\Debug\Model_1546.csproj.CopyComplete
+D:\XProject\Model_1546\obj\Debug\Model_1546.exe
+D:\XProject\Model_1546\obj\Debug\Model_1546.pdb
+D:\XProject\Model_1546\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\XProject\Model_1546\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\XProject\Model_1546\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\XProject\Model_1546\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\XProject\Model_1546\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\XProject\Model_1546\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\XProject\Model_1546\bin\Debug\Newtonsoft.Json.dll
+D:\XProject\Model_1546\bin\Debug\Newtonsoft.Json.xml
+D:\XProject\Model_1546\bin\Debug\System.Buffers.dll
+D:\XProject\Model_1546\bin\Debug\System.Memory.dll
+D:\XProject\Model_1546\bin\Debug\System.Numerics.Vectors.dll
+D:\XProject\Model_1546\bin\Debug\System.Text.Encodings.Web.dll
+D:\XProject\Model_1546\bin\Debug\System.Text.Json.dll
+D:\XProject\Model_1546\bin\Debug\System.ValueTuple.dll
+D:\XProject\Model_1546\bin\Debug\System.Buffers.xml
+D:\XProject\Model_1546\bin\Debug\System.Memory.xml
+D:\XProject\Model_1546\bin\Debug\System.Numerics.Vectors.xml
+D:\XProject\Model_1546\bin\Debug\System.Text.Encodings.Web.xml
+D:\XProject\Model_1546\bin\Debug\System.Text.Json.xml
+D:\XProject\Model_1546\bin\Debug\System.ValueTuple.xml
