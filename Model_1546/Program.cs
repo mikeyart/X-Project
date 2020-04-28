@@ -14,8 +14,8 @@ namespace Model_1546
         
         static void Main(string[] args)
         {
-            F f = new F();
-            string strength = f.GetTabFieldStrength(3,"land",50,37.5,100);
+            H h = new H();
+            double strength = h.HeightInterpolation(1, "land", 10,-40,100,"a",0);
             Console.WriteLine(strength);
         }
     }

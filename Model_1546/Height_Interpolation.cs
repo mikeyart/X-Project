@@ -11,9 +11,10 @@ namespace Model_1546
         double[] Heights = new double[] { 10, 20, 37.5, 75, 150, 300, 600, 1200 };
         F field = new F();
 
-       /* public double HeightInterpolation(int distance, string path, int time, double height, int freq, string option_43, double angle)
+        public double HeightInterpolation(int distance, string path, int time, double height, int freq, string option_43, double angle)
         {
             double h_inf, h_sup, E_inf, E_sup, x1, x2, E, E_10, E_20,C_1020,C_h1neg10,E_zero;
+            string E1, E2, E3;
 
             //Transmitting antenna height 1 in range 10...3000 meters
             if (height >=10 && height <3000)
@@ -26,8 +27,11 @@ namespace Model_1546
                     int i = Array.IndexOf(Heights, height);
                     h_inf = Heights[i - 1];
                     h_sup = Heights[i + 1];
-                    E_inf = field.GetTabFieldStrength(distance, path, time, h_inf, freq);
-                    E_sup = field.GetTabFieldStrength(distance, path, time, h_sup, freq);
+                    E1 = field.GetTabFieldStrength(distance, path, time, h_inf, freq);
+                    E2 = field.GetTabFieldStrength(distance, path, time, h_sup, freq);
+
+                    E_inf = Convert.ToDouble(E1);
+                    E_sup = Convert.ToDouble(E2);
 
                     x1 = Math.Log10(height / h_inf);
                     x2 = Math.Log10(h_sup / h_inf);
@@ -36,8 +40,11 @@ namespace Model_1546
                     return E;
                 }
                 else
-                    return field.GetTabFieldStrength(distance, path, time, height, freq);
-
+                {
+                    E3 = field.GetTabFieldStrength(distance, path, time, height, freq);
+                    E = Convert.ToDouble(E3);
+                    return E;
+                }
             }
 
             //Transmitting antenna height 1 in range 0...10 meters
@@ -69,7 +76,7 @@ namespace Model_1546
                 }
                 else { return 0; } 
             }
-        }*/
+        }
     }
 }
    
