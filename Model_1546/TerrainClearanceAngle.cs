@@ -52,12 +52,19 @@ namespace Model_1546
         }
         public static double GetC_h1(int freq, double h)
         {
-            double Teta_eff,v,k_v,Jv,correction;
+            double Teta_eff, v, k_v, Jv, correction;
+
             Teta_eff = Ang(Math.Atan(-1 * h / 9000.0));
             if (freq == 2000)
+            {
                 k_v = 6.0;
+                return k_v;
+            }
             else if (freq == 600)
+            {
                 k_v = 3.31;
+                return k_v;
+            }
             else if (freq == 100)
             {
                 k_v = 1.35;
@@ -65,7 +72,10 @@ namespace Model_1546
                 v = k_v * Teta_eff;
 
                 if (v <= -0.7806)
+                {
                     Jv = 0;
+                    return Jv;
+                }
                 else
                 {
                     Jv = 6.9 + 20 * Math.Log10(v - 0.1 + Math.Sqrt(Math.Pow(v - 0.1, 2) + 1));
@@ -73,7 +83,7 @@ namespace Model_1546
                     return correction;
                 }
             }
-
+            else { return 0; }
         }
     }
 }

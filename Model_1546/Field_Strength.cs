@@ -1,37 +1,71 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using NumSharp;
+using System.Data;
 
 namespace Model_1546
 {
     public class Field_Strength
     {
+        
+        //double Height;
+        string[] paths = { "land", "sea", "cold sea", "warm sea" };
         double[] Heights = new double[] { 10, 20, 37.5, 75, 150, 300, 600, 1200 };
+        int[] Times = { 1, 10, 50 };
+
+        public static DataTable ConvertCSVtoDataTable(string strFilePath)
+        {
+            DataTable dt = new DataTable();
+            using (StreamReader sr = new StreamReader(strFilePath))
+            {
+                string[] headers = sr.ReadLine().Split(';');
+                foreach (string header in headers)
+                {
+                    dt.Columns.Add(header);
+                }
+                while (!sr.EndOfStream)
+                {
+                    string[] rows = sr.ReadLine().Split(';');
+                    DataRow dr = dt.NewRow();
+                    for (int i = 0; i < rows.Count(); i++)
+                    {
+                        dr[i] = rows[i];
+                    }
+                    dt.Rows.Add(dr);
+                }
+
+            }
+
+
+            return dt;
+        }
         public static double getMaxFieldStrength(int distance, string path, int time)
         {
             double e_fs = 106.9 - 20 * Math.Log10(distance);
             return e_fs;
         }
 
-        public static double GetTabFieldStrength(int distance, string path, int time, double height, int freq)
+        public string GetTabFieldStrength(int distance, string path, int time, double height, int freq)
         {
-
-            string filename = "Tabulated.json";
+            string filename = "Tabulated.csv";
             string path_file = Path.Combine(Environment.CurrentDirectory, filename);
-            double strength = 0;
-            string jsonFromFile;
-            using (var reader = new StreamReader(path_file))
-            {
-                jsonFromFile = reader.ReadToEnd();
-            }
-            var objects = JsonConvert.DeserializeObject<List<RootObject>>(jsonFromFile);
+            DataTable dt = ConvertCSVtoDataTable(path_file);
 
-            for (int i = 0; i < objects.Count; i++)
-                if (objects[i].Frequency == freq && objects[i].Path == path && objects[i].Values == distance && Heights.Contains(height))
-                    strength = objects[i].Strength;
-            return strength;
+            DataRow[] Rows = dt.Select(String.Format("Frequency = '{0}' AND Path = '{1}' AND Time = '{2}' AND Values = '{3}'", freq, path, time, distance));
+
+            foreach (DataRow row in Rows)
+            {
+                string[] columnNames = dt.Columns.Cast<DataColumn>()
+                                         .Select(x => x.ColumnName).Where(n => n.Contains(height.ToString())).ToArray();
+                var name = row[String.Format("{0}", columnNames)].ToString();
+                return name;
+            }
+            return null;
         }
     }
 }

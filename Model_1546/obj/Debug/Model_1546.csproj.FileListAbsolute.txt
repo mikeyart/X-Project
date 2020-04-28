@@ -14,15 +14,6 @@ D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\obj\Debug\Model_1546.csproj.Re
 D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\obj\Debug\Model_1546.csproj.CoreCompileInputs.cache
 D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\obj\Debug\Model_1546.exe
 D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\obj\Debug\Model_1546.pdb
-D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.Common.dll
-D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.License.dll
-D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.Pdf.dll
-D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.XLS.dll
-D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Microsoft.mshtml.dll
-D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.Common.xml
-D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.License.xml
-D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.Pdf.xml
-D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Spire.XLS.xml
 D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\obj\Debug\Model_1546.csproj.CopyComplete
 D:\XProject\Model_1546\bin\Debug\Model_1546.exe.config
 D:\XProject\Model_1546\bin\Debug\Model_1546.exe
@@ -53,3 +44,32 @@ D:\XProject\Model_1546\bin\Debug\System.Numerics.Vectors.xml
 D:\XProject\Model_1546\bin\Debug\System.Text.Encodings.Web.xml
 D:\XProject\Model_1546\bin\Debug\System.Text.Json.xml
 D:\XProject\Model_1546\bin\Debug\System.ValueTuple.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Newtonsoft.Json.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Buffers.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Memory.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Numerics.Vectors.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Text.Encodings.Web.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Text.Json.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.ValueTuple.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\Newtonsoft.Json.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Buffers.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Memory.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Numerics.Vectors.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Text.Encodings.Web.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Text.Json.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.ValueTuple.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\ArrayFire.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\ChoETL.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\NumSharp.Core.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.CodeDom.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.ComponentModel.Annotations.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Data.SqlClient.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\CsvHelper.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\CsvHelper.xml
