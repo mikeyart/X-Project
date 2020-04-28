@@ -13,7 +13,6 @@ namespace Model_1546
     public class Field_Strength
     {
         
-        //double Height;
         string[] paths = { "land", "sea", "cold sea", "warm sea" };
         double[] Heights = new double[] { 10, 20, 37.5, 75, 150, 300, 600, 1200 };
         int[] Times = { 1, 10, 50 };
@@ -40,8 +39,6 @@ namespace Model_1546
                 }
 
             }
-
-
             return dt;
         }
         public static double getMaxFieldStrength(int distance, string path, int time)

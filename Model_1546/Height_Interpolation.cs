@@ -8,11 +8,10 @@ namespace Model_1546
 {
     public class Height_Interpolation
     {
-        double[] Heights = new double[] { 10, 20, 37.5, 75, 150, 300, 600, 1200 };
-        F field = new F();
-
-        public double HeightInterpolation(int distance, string path, int time, double height, int freq, string option_43, double angle)
+        public static double HeightInterpolation(int distance, string path, int time, double height, int freq, string option_43, double angle)
         {
+            F field = new F();
+            double[] Heights = new double[] { 10, 20, 37.5, 75, 150, 300, 600, 1200 };
             double h_inf, h_sup, E_inf, E_sup, x1, x2, E, E_10, E_20,C_1020,C_h1neg10,E_zero;
             string E1, E2, E3;
 
