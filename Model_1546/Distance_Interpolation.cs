@@ -37,33 +37,37 @@ namespace Model_1546
 
     public class Distance_Interpolation
     {
-        string[] Distances = new string[] { Enumerable.Range(1, 20).ToString() + MyEnumerable.FiveRange(20, 100).ToString() + MyEnumerable.TenRange(100, 200).ToString() + MyEnumerable.TwentyFiveRange(200, 1001).ToString() };
-
-        public double DistanceInterpolation(int distance, string path, int time, double height, int freq, string option43, double angle)
+        public static double DistanceInterpolation(int distance, string path, int time, double height, int freq, string option43, double angle)
         {
+            //List<int> Distances = Enumerable.Range(1, 20).ToList() + MyEnumerable.FiveRange(20,100).ToList();
+            List<int> D1 = Enumerable.Range(1, 19).ToList();
+            List<int> D2 = MyEnumerable.FiveRange(20, 80).ToList();
+            List<int> D3 = MyEnumerable.TenRange(100, 100).ToList();
+            List<int> D4 = MyEnumerable.TwentyFiveRange(200, 1001).ToList();
+
+            var Distances = D1.Concat(D2)
+                              .Concat(D3)
+                              .Concat(D4)
+                              .ToList();
             double E_inf, E_sup, E;
-            int d_inf, d_sup;
-            string d1, d2;
-            if (Distances.Contains(distance.ToString()))
-                return Height_Interpolation.HeightInterpolation(distance, path, time, height, freq, option43, angle);
-            else
-            {
-                Array.Resize(ref Distances, Distances.Length + 1);
-                Distances[Distances.GetUpperBound(0)] = distance.ToString();
-                Array.Sort(Distances);
-                int i = Array.IndexOf(Distances, distance);
-                d1 = Distances[i - 1];
-                d2 = Distances[i + 1];
+            int d_inf, d_sup,i;
+             if (Distances.Contains(distance))
+                 return Height_Interpolation.HeightInterpolation(distance, path, time, height, freq, option43, angle);
+             else
+             {
+                Distances.Add(distance);
+                Distances.Sort();
+                i = Distances.IndexOf(distance);
+                 d_inf = Distances[i - 1];
+                 d_sup = Distances[i + 1];
 
-                d_inf = Convert.ToInt32(d1);
-                d_sup = Convert.ToInt32(d2);
-
-                E_inf = Height_Interpolation.HeightInterpolation(d_inf, path, time, height, freq, option43, angle);
-                E_sup = Height_Interpolation.HeightInterpolation(d_sup, path, time, height, freq, option43, angle);
-                E = E_inf + (E_sup - E_inf) * Math.Log10(distance * 1.0 / d_inf * 1.0) / Math.Log10(d_sup * 1.0 / d_inf * 1.0);
-                return E;
-            }
-
+                 E_inf = Height_Interpolation.HeightInterpolation(d_inf, path, time, height, freq, option43, angle);
+                 E_sup = Height_Interpolation.HeightInterpolation(d_sup, path, time, height, freq, option43, angle);
+                 E = E_inf + (E_sup - E_inf) * Math.Log10(distance * 1.0 / d_inf * 1.0) / Math.Log10(d_sup * 1.0 / d_inf * 1.0);
+                 return E;
+             }
+             
+            return 0;
         }
 
     }

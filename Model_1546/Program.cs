@@ -4,8 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using H = Model_1546.Height_Interpolation;
-using F = Model_1546.Field_Strength;
+
 
 namespace Model_1546
 {
@@ -14,9 +13,8 @@ namespace Model_1546
         
         static void Main(string[] args)
         {
-            H h = new H();
-            double strength = h.HeightInterpolation(1, "land", 10,-40,100,"a",0);
-            Console.WriteLine(strength);
+            double E = Calculate_Field.CalculateField(100, 0.0, 10, 300, 850, "a", 5, true, 10, 40, 15);
+            Console.WriteLine(E);
         }
     }
 }

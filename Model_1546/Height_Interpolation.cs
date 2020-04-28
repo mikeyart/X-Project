@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using F = Model_1546.Field_Strength;
-using TCA = Model_1546.TerrainClearanceAngle;
+using TCA = Model_1546.Corrections;
 
 
 namespace Model_1546

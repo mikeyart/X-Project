@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Model_1546
 {
-    public class TerrainClearanceAngle
+    public class Corrections
     {
         double v_prim, v, Jv, Jv_prim, corr;
 
@@ -27,6 +27,7 @@ namespace Model_1546
             }
 
         }
+
         public static double TerrainClearanceAngleCorrectionRx(double angle, int freq)
         {
             double v_prim, v, Jv, Jv_prim,corr;
@@ -50,6 +51,7 @@ namespace Model_1546
             double angle = value + 90;
             return (angle + value) % 360;
         }
+
         public static double GetC_h1(int freq, double h)
         {
             double Teta_eff, v, k_v, Jv, correction;
@@ -84,6 +86,43 @@ namespace Model_1546
                 }
             }
             else { return 0; }
+        }
+
+        public static double rec_corr(int distance, string path, int time, double height, int freq, string option43, double angle, bool use_rTCA, int rTCA)
+        {
+            double fsr, rTCA_correction;
+
+            fsr = Frequency_Interpolation.FrequencyInterpolation(distance, path, time, height, freq, option43, angle);
+            if (use_rTCA == false)
+                return fsr;
+            else
+            {
+                rTCA_correction = TerrainClearanceAngleCorrectionRx(rTCA, freq);
+                return fsr + rTCA_correction;
+            }
+        }
+
+        public static double fsl(int distance, double sea_percent, int time, double height, int freq, string option43, double angle, bool use_rTCA, int rTCA, double power)
+        {
+            double E, E_land, E_sea, delta, V, A, A_F_sea;
+            if (sea_percent == 0)
+            {
+                E = rec_corr(distance, "land", time, height, freq, option43, angle, use_rTCA, rTCA);
+                E = E + (power - 30);
+                return E;
+            }
+            else
+            {
+                E_land = rec_corr(distance, "land", time, height, freq, option43, angle, use_rTCA, rTCA);
+                E_sea = rec_corr(distance, "warm sea", time, height, freq, option43, angle, use_rTCA, rTCA);
+                delta = E_sea - E_land;
+                V = Math.Max(1.0,1.0*delta/40.0);
+                A_F_sea = Math.Pow(1 - (1 - sea_percent), 0.66);
+                A = Math.Pow(A_F_sea, V);
+                E = (1 - A) * E_land + A * E_sea;
+                E = E + (power - 30);
+                return E;
+            }
         }
     }
 }
