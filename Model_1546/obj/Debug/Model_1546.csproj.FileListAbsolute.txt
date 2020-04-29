@@ -73,3 +73,15 @@ D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Configuration
 D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Data.SqlClient.dll
 D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\CsvHelper.dll
 D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\CsvHelper.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Security.AccessControl.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Security.Permissions.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Security.Principal.Windows.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\NumSharp.Core.pdb
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.CodeDom.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Data.SqlClient.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Security.AccessControl.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Security.Permissions.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Security.Principal.Windows.xml
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\SRTM.dll
+D:\Mihai\FAF\Teza de licenta\X Project\Model_1546\bin\Debug\System.Device.Portable.dll

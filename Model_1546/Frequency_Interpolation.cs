@@ -8,7 +8,7 @@ namespace Model_1546
 {
     public class Frequency_Interpolation
     {
-        public static double FrequencyInterpolation(int distance, string path, int time, double height, int freq, string option43, double angle)
+        public static double FrequencyInterpolation(double distance, string path, int time, double height, int freq, string option43, double angle)
         {
             int[] Frequencies = new int[] { 100, 600, 2000 };
             int f_inf, f_sup;

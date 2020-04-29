@@ -8,7 +8,7 @@ namespace Model_1546
 {
     public class Height_Interpolation
     {
-        public static double HeightInterpolation(int distance, string path, int time, double height, int freq, string option_43, double angle)
+        public static double HeightInterpolation(double distance, string path, int time, double height, int freq, string option_43, double angle)
         {
             F field = new F();
             double[] Heights = new double[] { 10, 20, 37.5, 75, 150, 300, 600, 1200 };

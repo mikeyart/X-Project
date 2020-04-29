@@ -47,7 +47,7 @@ namespace Model_1546
             return e_fs;
         }
 
-        public string GetTabFieldStrength(int distance, string path, int time, double height, int freq)
+        public string GetTabFieldStrength(double distance, string path, int time, double height, int freq)
         {
             string filename = "Tabulated.csv";
             string path_file = Path.Combine(Environment.CurrentDirectory, filename);
