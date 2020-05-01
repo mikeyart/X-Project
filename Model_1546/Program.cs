@@ -13,8 +13,9 @@ namespace Model_1546
         
         static void Main(string[] args)
         {
-            double E = Calculate_Field.CalculateField(0.0, 10, 300, "a", 0, true, 5,  10, 40);
-            Console.WriteLine(E);
+            // double E = Calculate_Field.CalculateField(0.0, 10, 300, "a", 0, true, 5,  10, 40);
+            double h = Test.heights();
+            Console.WriteLine(h);
         }
     }
 }
