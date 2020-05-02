@@ -262,6 +262,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Corrections.cs" />
+    <Compile Include="Station_Add.cs" />
     <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>

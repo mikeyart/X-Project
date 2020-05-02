@@ -20,19 +20,35 @@ namespace Model_1546
     {
         public static double ReadTerrain(double latitude, double longitude)
         {
-            // USGS data is immediately available, but is of a lower resolution.
             var srtmData = new SRTMData(@"C:\Users\Ciclicci\Desktop\SRTM_USGS", new USGSSource());
 
-            // NASA data is of a higher resolution, but requires creating an account at https://urs.earthdata.nasa.gov/users/new/.
             //var credentials = new NetworkCredential("mikeyart", "Prince5498");
             //var srtmData = new SRTMData(@"C:\Users\Ciclicci\Desktop\SRTM_NASA", new NASASource(credentials));
-            double? elevation1 = srtmData.GetElevation(latitude, longitude);
+
+            int? elevation1 = srtmData.GetElevation(latitude, longitude);
             double elevation = Convert.ToDouble(elevation1);
 
             return elevation;
         }
 
-        public static double heff(double lat, double lon, double distance, double theta)
+        public static double Bearing(double lat1, double lon1, double lat2, double lon2)
+        {
+            lat1 *= (Math.PI / 180);
+            lon1 *= (Math.PI / 180);
+            lat2 *= (Math.PI / 180);
+            lon2 *= (Math.PI / 180);
+            double y = lon2 - lon1;
+
+            double dX = Math.Cos(lat1) * Math.Sin(lat2) - Math.Sin(lat1) * Math.Cos(lat2) * Math.Cos(y);
+            double dY = Math.Cos(lat2) * Math.Sin(y);
+
+            double Azimuth = Math.Atan2(dX, dY);
+
+            double bearing = Azimuth * 180 / Math.PI;
+            return bearing;
+        }
+
+        public static double coords(double lat, double lon, double distance, double theta)
         {
             double lat2, lon2, angdist, height;
             lat *= (Math.PI / 180);
@@ -50,31 +66,27 @@ namespace Model_1546
             double finalLat = lat2 * 180 / Math.PI;
             double finalLon = lon2 * 180 / Math.PI;
 
-            height = ReadTerrain(finalLat,finalLon);
+            height = ReadTerrain(finalLat, finalLon);
             return height;
         }
 
-        public static double heights()
-        {
-            double height = 0;
-            List<double> h1 = new List<double>();
-            double average = 0;
-            for (double theta = 0; theta < 360; theta += 10)
-            {
-                for (double dist = 3; dist < 15; dist += 0.09)
-                {
-                    height = heff(47.021573, 28.947393, dist, theta);
-                    h1.Add(height);
-                    average = Math.Round(h1.Average(), 0);
-                }
-                h1.Clear();
 
-                double altitude = ReadTerrain(47.021573, 28.947393);
-                double hant = altitude + 100;
-                double hef = hant - average;
-                Console.WriteLine(String.Format("Altitude: {0} For theta {1}, this height {2}", altitude, theta, hef));
+        public static double TCA()
+        {
+            double bearing = Bearing(47.341232, 29.426484, 47.064436, 28.456821);
+            Dictionary<double,double> h1 = new Dictionary<double,double>();
+            double height = 0;
+            for (double dist = 0; dist < 15; dist += 0.1)
+            {
+                height = coords(47.341232, 29.426484, dist, bearing);
+                h1.Add(dist, height);
             }
-            return 0;
+            double max = h1.Values.Max();
+            var distance = Math.Round(h1.FirstOrDefault(x => x.Value == max).Key,2);
+            double ang1 = Math.Atan2(distance, max) * 180 / Math.PI;
+            double tca = Math.Round(90 - ang1,1);
+            
+            return tca;
         }
 
     }

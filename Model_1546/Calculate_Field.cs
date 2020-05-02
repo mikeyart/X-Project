@@ -13,6 +13,7 @@ namespace Model_1546
 {
     public class Calculate_Field
     {
+
         public static double ReadTerrain(double latitude, double longitude)
         {
             var srtmData = new SRTMData(@"C:\Users\Ciclicci\Desktop\SRTM_USGS", new USGSSource());
@@ -26,7 +27,7 @@ namespace Model_1546
             return elevation;
         }
 
-        public static double coords(double lat, double lon, double distance, double theta)
+        public static double Coords(double lat, double lon, double distance, double theta)
         {
             double lat2, lon2, angdist, height;
             lat *= (Math.PI / 180);
@@ -48,7 +49,7 @@ namespace Model_1546
             return height;
         }
 
-        public static List<double> heff(double latitude, double longitude)
+        public static List<double> Heff(double latitude, double longitude)
         {
             double height = 0;
             double hef = 0;
@@ -59,7 +60,7 @@ namespace Model_1546
             {
                 for (double dist = 3; dist < 15; dist += 0.09)
                 {
-                    height = coords(latitude, longitude, dist, theta);
+                    height = Coords(latitude, longitude, dist, theta);
                     h1.Add(height);
                     average = Math.Round(h1.Average(), 0);
                 }
@@ -68,21 +69,57 @@ namespace Model_1546
                 double altitude = ReadTerrain(47.021573, 28.947393);
                 double hant = altitude + 100;
                 hef = hant - average;
+                heff.Add(hef);
             }
-            heff.Add(hef);
             return heff;
         }
 
-        public static double CalculateField(double sea_percent, int time, int freq, string option43, double angle, bool use_rTCA, int rTCA, double power, int ag12)
+        public static double Bearing(double lat1, double lon1, double lat2, double lon2)
+        {
+            lat1 *= (Math.PI / 180);
+            lon1 *= (Math.PI / 180);
+            lat2 *= (Math.PI / 180);
+            lon2 *= (Math.PI / 180);
+            double y = lon2 - lon1;
+
+            double dX = Math.Cos(lat1) * Math.Sin(lat2) - Math.Sin(lat1) * Math.Cos(lat2) * Math.Cos(y);
+            double dY = Math.Cos(lat2) * Math.Sin(y);
+
+            double Azimuth = Math.Atan2(dX, dY);
+
+            double bearing = Azimuth * 180 / Math.PI;
+            return bearing;
+        }
+
+        public static double TCA(double lat1, double lon1, double lat2, double lon2)
+        {
+            double bearing = Bearing(lat1, lon1, lat2, lon2);
+            Dictionary<double, double> h1 = new Dictionary<double, double>();
+            double height = 0;
+            for (double dist = 0; dist < 15; dist += 0.1)
+            {
+                height = Coords(lat1, lon1, dist, bearing);
+                h1.Add(dist, height);
+            }
+            double max = h1.Values.Max();
+            var distance = Math.Round(h1.FirstOrDefault(x => x.Value == max).Key, 2);
+            double ang1 = Math.Atan2(distance, max) * 180 / Math.PI;
+            double tca = Math.Round(90 - ang1, 1);
+
+            return tca;
+        }
+
+
+        public static double CalculateField(double sea_percent, int time, int freq, string option43, double angle, bool use_rTCA, double power, int ag12)
         {
             var nCoord = new GeoCoordinate(latitudeTx, longitudeTx);
             var eCoord = new GeoCoordinate(latitudeRx, lonigutdeRx);
             double distance = Math.Round(nCoord.GetDistanceTo(eCoord) / 1000, 1);
 
-            double height = heff(latitudeTx,longitudeTx);
-            
+            double height = Heff(latitudeTx,longitudeTx);
             double fsl_10m, Kh2, correction;
-            
+
+            double rTCA = TCA(latitudeTx, longitudeTx, latitudeRx, lonigutdeRx);
 
             fsl_10m = Corrections.fsl(distance, sea_percent, time, height, freq, option43, angle, use_rTCA, rTCA, power);
 

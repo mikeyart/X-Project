@@ -41,6 +41,7 @@ namespace Model_1546
             }
             return dt;
         }
+
         public static double getMaxFieldStrength(int distance, string path, int time)
         {
             double e_fs = 106.9 - 20 * Math.Log10(distance);
