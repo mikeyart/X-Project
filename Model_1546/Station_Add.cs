@@ -40,6 +40,16 @@ namespace Model_1546
             string filename = "Stations.csv";
             string path_file = Path.Combine(Environment.CurrentDirectory, filename);
             DataTable dt = ConvertCSVtoDataTable(path_file);
+
+            DataRow[] Rows = dt.Select();
+
+            foreach (DataRow row in Rows)
+            {
+                string[] columnNames = dt.Columns.Cast<DataColumn>()
+                                         .Select(x => x.ColumnName).Where(n => n.Contains(height.ToString())).ToArray();
+                var latitudeTx = row[columnNames].ToString();
+                return name;
+            }
         }
 
     }

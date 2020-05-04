@@ -83,9 +83,8 @@ namespace Model_1546
             }
             double max = h1.Values.Max();
             var distance = Math.Round(h1.FirstOrDefault(x => x.Value == max).Key,2);
-            double ang1 = Math.Atan2(distance, max) * 180 / Math.PI;
+            double ang1 = Math.Atan2(distance*1000, max) * 180 / Math.PI;
             double tca = Math.Round(90 - ang1,1);
-            
             return tca;
         }
 

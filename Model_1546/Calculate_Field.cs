@@ -103,7 +103,7 @@ namespace Model_1546
             }
             double max = h1.Values.Max();
             var distance = Math.Round(h1.FirstOrDefault(x => x.Value == max).Key, 2);
-            double ang1 = Math.Atan2(distance, max) * 180 / Math.PI;
+            double ang1 = Math.Atan2(distance * 1000, max) * 180 / Math.PI;
             double tca = Math.Round(90 - ang1, 1);
 
             return tca;
@@ -117,9 +117,12 @@ namespace Model_1546
             double distance = Math.Round(nCoord.GetDistanceTo(eCoord) / 1000, 1);
 
             double height = Heff(latitudeTx,longitudeTx);
-            double fsl_10m, Kh2, correction;
 
             double rTCA = TCA(latitudeTx, longitudeTx, latitudeRx, lonigutdeRx);
+            double fsl_10m, Kh2, correction;
+
+            /*double distance = 0;
+            double height = 0;*/
 
             fsl_10m = Corrections.fsl(distance, sea_percent, time, height, freq, option43, angle, use_rTCA, rTCA, power);
 
